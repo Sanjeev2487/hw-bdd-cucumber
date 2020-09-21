@@ -19,7 +19,8 @@ end
 Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
   #  ensure that that e1 occurs before e2.
   #  page.body is the entire content of the page as a string.
-  fail "Unimplemented"
+  #fail "Unimplemented"
+  page.body.index(e1).should < page.body.index(e2)
 end
 
 Then /I should (not )?see the following movies: (.*)$/ do |present, movies_list|
